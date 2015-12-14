@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Countries.View.CountryDetailsPage"
+             xmlns:local="clr-namespace:Countries.CustomControls;assembly=Countries"
+             BackgroundColor="#222f5b">
+  <ContentPage.Content>
+    <StackLayout Spacing="10">
+      <StackLayout.Padding>
+        10, 10, 5, 0
+      </StackLayout.Padding>
+      <Label Text="General Information:" FontSize="22"></Label>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Country: " VerticalOptions="End"></Label>
+        <local:CustomLabel Text="{Binding CountryName}"
+               FontSize="18"   FontAttributes="Italic" VerticalOptions="Center"></local:CustomLabel>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Country Code: " VerticalOptions="End"></Label>
+        <local:CustomLabel Text="{Binding CountryCode}"
+               FontSize="18"   FontAttributes="Italic" VerticalOptions="Center"></local:CustomLabel>
+      </StackLayout>
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="auto"></ColumnDefinition>
+          <ColumnDefinition Width="2*"></ColumnDefinition>
+          <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+      <Label Text="Capital City: " VerticalOptions="End"></Label>
+        <local:CustomLabel Grid.Column="1" x:Name="cityToSpeak" Text="{Binding CapitalName}"
+               FontSize="18"   FontAttributes="Italic" VerticalOptions="End"></local:CustomLabel>
+      <Button x:Name="listen_btn" Clicked="TalkToMe" Grid.Column="2" BackgroundColor="#0e1a40" VerticalOptions="End" FontSize="12" HeightRequest="30"></Button>
+      </Grid>
+        
+        
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Currency: " VerticalOptions="End"></Label>
+        <local:CustomLabel Text="{Binding CurrencyCode}"
+               FontSize="18"   FontAttributes="Italic" VerticalOptions="Center"></local:CustomLabel>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Area: " VerticalOptions="End"></Label>
+        <local:CustomLabel Text="{Binding Area, StringFormat='{0} km²'}"
+               FontSize="18"   FontAttributes="Italic" VerticalOptions="Center"></local:CustomLabel>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Population: " VerticalOptions="End"></Label>
+        <local:CustomLabel Text="{Binding Population}"
+               FontSize="18"   FontAttributes="Italic" VerticalOptions="Center"></local:CustomLabel>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Continent: " VerticalOptions="End"></Label>
+        <local:CustomLabel Text="{Binding Continent}"
+               FontSize="18"   FontAttributes="Italic" VerticalOptions="Center"></local:CustomLabel>
+      </StackLayout>
+      <StackLayout>
+        <StackLayout.Padding>
+          0, 15, 0, 0
+        </StackLayout.Padding>
+        <StackLayout Orientation="Horizontal">
+          <Label Text="Current Weather:" FontSize="22"></Label>
+          <local:CustomLabel Text="{Binding CurrentTime}" VerticalOptions="EndAndExpand" FontSize="18"></local:CustomLabel>
+        </StackLayout>
+        <Grid>
+          <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="3">
+            <Label Text="City: " VerticalOptions="End"></Label>
+            <local:CustomLabel Text="{Binding Weather.CityName, StringFormat='{0}'}" VerticalOptions="EndAndExpand" FontSize="18">
+            </local:CustomLabel>
+          </StackLayout>
+          <StackLayout Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="1">
+            <StackLayout.Padding>
+              0, 0, 3, 0
+            </StackLayout.Padding>
+            <Label Text="Temp.: " VerticalOptions="End"></Label>
+            <local:CustomLabel Text="{Binding Weather.Temperature, StringFormat='{0}°C'}" VerticalOptions="EndAndExpand" FontSize="18">
+            </local:CustomLabel>
+          </StackLayout>
+          <StackLayout Orientation="Horizontal" Grid.Column="2" Grid.Row="1">
+            <Label Text="Max: " VerticalOptions="End"></Label>
+            <local:CustomLabel Text="{Binding Weather.MaxTemperature, StringFormat='{0}°C'}" VerticalOptions="EndAndExpand" FontSize="18">
+            </local:CustomLabel>
+          </StackLayout>
+          <StackLayout Orientation="Horizontal" Grid.Column="3" Grid.Row="1">
+            <Label Text="Min: " VerticalOptions="End"></Label>
+            <local:CustomLabel Text="{Binding Weather.MinTemperature, StringFormat='{0}°C'}" VerticalOptions="EndAndExpand" FontSize="18">
+            </local:CustomLabel>
+          </StackLayout>
+          <StackLayout Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="2">
+            <Label Text="Wind Speed: " VerticalOptions="End"></Label>
+            <local:CustomLabel Text="{Binding Weather.WindSpeed, StringFormat='{0} km/h'}" VerticalOptions="EndAndExpand" FontSize="18">
+            </local:CustomLabel>
+          </StackLayout>
+          <StackLayout Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="2">
+            <Label Text="Pressure: " VerticalOptions="End"></Label>
+            <local:CustomLabel Text="{Binding Weather.Pressure, StringFormat='{0} mb'}" VerticalOptions="EndAndExpand" FontSize="18">
+            </local:CustomLabel>
+          </StackLayout>
+          <StackLayout Orientation="Horizontal" Grid.ColumnSpan="4" Grid.Column="0" Grid.Row="3">
+            <Label Text="Description: " VerticalOptions="End"></Label>
+            <local:CustomLabel Text="{Binding Weather.WeatherDescription, StringFormat='{0}'}" VerticalOptions="EndAndExpand" FontSize="18">
+            </local:CustomLabel>
+          </StackLayout>
+        </Grid>
+        <Button VerticalOptions="End" BackgroundColor="#0e1a40" Clicked="GetCountryOnMap" HorizontalOptions="CenterAndExpand" WidthRequest="550" Text="See Location On Browser">
+        </Button>
+      </StackLayout>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

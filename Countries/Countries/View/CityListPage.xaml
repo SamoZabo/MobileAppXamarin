@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:local="clr-namespace:Countries.CustomControls;assembly=Countries"
+             x:Class="Countries.View.CityListPage" BackgroundColor="#222f5b">
+  <ContentPage.Content>
+    <StackLayout Padding="5">
+      <local:CustomLabel Text="City Name"></local:CustomLabel>
+      <Entry x:Name="cityName" Placeholder="Search for a City" TextChanged="OnTextChanged"></Entry>
+      <Label Text="Capital Cities" FontSize="20"></Label>
+      <local:CustomViewList ItemsSource="{Binding Countries}" ItemTapped="OnItemTapped" RowHeight="50">
+        <local:CustomViewList.ItemTemplate>
+          <DataTemplate>
+            <local:CustomViewCell>
+              <local:CustomViewCell.View>
+                <StackLayout>
+                  <StackLayout.Padding>
+                    5,0,0,0
+                  </StackLayout.Padding>
+                  <local:CustomLabel Text="{Binding CapitalName}" FontSize="18"></local:CustomLabel>
+                  <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding CountryName}" FontSize="13" TextColor="White" FontAttributes="Bold"></Label>
+                    <Label Text="{Binding Continent}" FontSize="13" TextColor="White" FontAttributes="Bold"></Label>
+                  </StackLayout>
+                </StackLayout>
+              </local:CustomViewCell.View>
+          </local:CustomViewCell>
+        </DataTemplate>
+        </local:CustomViewList.ItemTemplate>
+      </local:CustomViewList>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>
