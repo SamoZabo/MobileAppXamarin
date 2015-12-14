@@ -36,63 +36,10 @@ namespace Countries.View
             {
                 var weather = JsonConvert.DeserializeObject<WeatherObject.WeatherRoot>(response);
                 selectedObject.Weather = new WeatherViewModel(weather);
-                if (selectedObject.Weather.Temperature.ToString().Contains("."))
-                {
-                    try
-                    {
-                        selectedObject.Weather.Temperature =
-                        double.Parse(selectedObject.Weather.Temperature.ToString()
-                        .Substring(0, selectedObject.Weather.Temperature.ToString()
-                        .IndexOf('.') + 3));
-                    }
-                    catch
-                    {
-                        selectedObject.Weather.Temperature =
-                        double.Parse(selectedObject.Weather.Temperature.ToString()
-                        .Substring(0, selectedObject.Weather.Temperature.ToString()
-                        .IndexOf('.') + 2));
-                    }
-
-                }
-
-                if (selectedObject.Weather.MinTemperature.ToString().Contains("."))
-                {
-                    try
-                    {
-                        selectedObject.Weather.MinTemperature =
-                                       double.Parse(selectedObject.Weather.MinTemperature.ToString()
-                                       .Substring(0, selectedObject.Weather.MinTemperature.ToString()
-                                       .IndexOf('.') + 3));
-                    }
-                    catch 
-                    {
-                        selectedObject.Weather.MinTemperature =
-                                       double.Parse(selectedObject.Weather.MinTemperature.ToString()
-                                       .Substring(0, selectedObject.Weather.MinTemperature.ToString()
-                                       .IndexOf('.') + 2));
-                    }
-
-                }
-
-                if (selectedObject.Weather.MaxTemperature.ToString().Contains("."))
-                {
-                    try
-                    {
-                        selectedObject.Weather.MaxTemperature =
-                        double.Parse(selectedObject.Weather.MaxTemperature.ToString()
-                        .Substring(0, selectedObject.Weather.MaxTemperature.ToString()
-                        .IndexOf('.') + 3));
-                    }
-                    catch 
-                    {
-                        selectedObject.Weather.MaxTemperature =
-                        double.Parse(selectedObject.Weather.MaxTemperature.ToString()
-                        .Substring(0, selectedObject.Weather.MaxTemperature.ToString()
-                        .IndexOf('.') + 2));
-                    }
-                    
-                }
-                //Insights.Track("CitiesListSelectedItem", "Selected City", selectedObject.CapitalName);
+                selectedObject.Weather.Temperature = Math.Round(selectedObject.Weather.Temperature);
+                selectedObject.Weather.MinTemperature = Math.Round(selectedObject.Weather.MinTemperature);
+                selectedObject.Weather.MaxTemperature = Math.Round(selectedObject.Weather.MaxTemperature);
+                Insights.Track("CitiesListSelectedItem", "Selected City", selectedObject.CapitalName);
                 await Navigation.PushAsync(new CountryDetailsPage(selectedObject));
             }
             catch (Exception ex)
