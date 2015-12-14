@@ -29,7 +29,7 @@
       <Label Text="Capital City: " VerticalOptions="End"></Label>
         <local:CustomLabel Grid.Column="1" x:Name="cityToSpeak" Text="{Binding CapitalName}"
                FontSize="18"   FontAttributes="Italic" VerticalOptions="End"></local:CustomLabel>
-      <Button x:Name="listen_btn" Clicked="TalkToMe" Grid.Column="2"  BackgroundColor="#0e1a40" VerticalOptions="End" FontSize="12" HeightRequest="30"></Button>
+      <Button x:Name="listen_btn" Text="Listen" Clicked="TalkToMe" Grid.Column="2" BackgroundColor="#0e1a40" VerticalOptions="End" FontSize="12" HeightRequest="30"></Button>
       </Grid>
         
         
