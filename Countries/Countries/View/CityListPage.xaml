@@ -6,7 +6,7 @@
   <ContentPage.Content>
     <StackLayout Padding="5">
       <local:CustomLabel Text="City Name"></local:CustomLabel>
-      <Entry x:Name="cityName" Placeholder="Search for a City" TextChanged="OnTextChanged"></Entry>
+      <Entry x:Name="cityName" Placeholder="Search for a City/Country" TextChanged="OnTextChanged"></Entry>
       <Label Text="Capital Cities" FontSize="20"></Label>
       <local:CustomViewList ItemsSource="{Binding Countries}" ItemTapped="OnItemTapped" RowHeight="50">
         <local:CustomViewList.ItemTemplate>

@@ -36,7 +36,7 @@ namespace Countries.View
             {
                 _db.Save(country);
             }
-            var c = _db.GetAll();
+           // var c = _db.GetAll();
         }
     }
 }

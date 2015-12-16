@@ -39,5 +39,6 @@ D:\School\Skola\TF_Xamarin\Examination\Countries\Countries\Countries.Droid\obj\D
 D:\School\Skola\TF_Xamarin\Examination\Countries\Countries\Countries.Droid\obj\Debug\res\drawable\weather_icon.png
 D:\School\Skola\TF_Xamarin\Examination\Countries\Countries\Countries.Droid\obj\Debug\R.cs.flag
 D:\School\Skola\TF_Xamarin\Examination\Countries\Countries\Countries.Droid\obj\Debug\uploadflags.txt
+D:\School\Skola\TF_Xamarin\Examination\Countries\Countries\Countries.Droid\bin\Debug\Countries.dll.mdb
 D:\School\Skola\TF_Xamarin\Examination\Countries\Countries\Countries.Droid\obj\Debug\Countries.Droid.dll.mdb
 D:\School\Skola\TF_Xamarin\Examination\Countries\Countries\Countries.Droid\bin\Debug\Countries.Droid.dll.mdb

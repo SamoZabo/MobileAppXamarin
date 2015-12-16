@@ -30,3 +30,5 @@ D:\School\Skola\TF_Xamarin\Examination\Countries\Countries\Countries\obj\Debug\C
 D:\School\Skola\TF_Xamarin\Examination\Countries\Countries\Countries\obj\Debug\Countries.csprojResolveAssemblyReference.cache
 D:\School\Skola\TF_Xamarin\Examination\Countries\Countries\Countries\obj\Debug\Countries.dll.mdb
 D:\School\Skola\TF_Xamarin\Examination\Countries\Countries\Countries\bin\Debug\Countries.dll.mdb
+D:\School\Skola\TF_Xamarin\Examination\Countries\Countries\Countries\obj\Debug\Countries.dll.mdb
+D:\School\Skola\TF_Xamarin\Examination\Countries\Countries\Countries\bin\Debug\Countries.dll.mdb
